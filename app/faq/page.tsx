@@ -1,21 +1,28 @@
-import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
+import { PageShell } from "@/components/page-shell";
+import { faqItems } from "@/lib/site-content";
 
 export default function FaqPage() {
   return (
     <main className="page-shell min-h-screen">
       <SiteHeader />
-      <div className="mx-auto max-w-5xl px-5 py-16 sm:px-8">
-        <div className="section-card p-10">
-          <p className="section-label">FAQ</p>
-          <h1 className="font-[family-name:var(--font-display)] text-5xl text-paper">Заготовка раздела FAQ</h1>
-          <p className="section-copy mt-5">
-            Здесь появятся вопросы про видео, формы, деплой и дальнейшую поддержку сайта.
-          </p>
-          <Link href="/" className="button-secondary mt-8 inline-flex">
-            Назад
-          </Link>
-        </div>
+
+      <PageShell
+        eyebrow="FAQ"
+        title="Частые вопросы о формате, сценарии и переносе"
+        copy="Здесь удобно ответить на вопросы, которые чаще всего возникают у пар перед бронью. Это поможет разгрузить форму и сократить лишние переписки."
+      />
+
+      <div className="mx-auto grid max-w-7xl gap-4 px-4 pb-10 sm:px-6 lg:px-8">
+        {faqItems.map((item, index) => (
+          <details key={item.question} className="section-card group p-6">
+            <summary className="cursor-pointer list-none text-2xl font-semibold tracking-[-0.04em] text-paper">
+              <span className="mr-3 text-white/36">{String(index + 1).padStart(2, "0")}</span>
+              {item.question}
+            </summary>
+            <p className="mt-4 max-w-4xl text-sm leading-7 text-white/66">{item.answer}</p>
+          </details>
+        ))}
       </div>
     </main>
   );
