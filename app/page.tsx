@@ -3,7 +3,7 @@ import Image from "next/image";
 import { SectionHeading } from "@/components/section-heading";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { caseCards, heroFacts, processSteps, reviewCards, usefulCards } from "@/lib/site-content";
+import { caseCards, heroFacts, principlesCards, processSteps, reviewCards, usefulCards } from "@/lib/site-content";
 
 export default function HomePage() {
   return (
@@ -120,47 +120,77 @@ export default function HomePage() {
           </div>
         </section>
 
-        <div className="mx-auto mt-8 max-w-7xl px-2 sm:px-1 lg:mt-10">
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-1">
-              <article id="about" className="section-card overflow-hidden">
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image
-                    src="/media/portrait-bw.jpg"
-                    alt="Черно-белый портрет Тимура Громова"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-5 sm:p-6">
-                  <p className="section-label">Обо мне</p>
-                  <h2 className="text-2xl font-semibold tracking-[-0.04em] text-paper sm:text-[2rem]">Тимур Громов</h2>
-                  <p className="mt-3 text-sm leading-7 text-white/66">
-                    Ведущий, который держит темп вечера, умеет разговаривать с гостями и не превращает свадьбу
-                    в механическую программу.
-                  </p>
+        <section id="about" className="mt-8 overflow-hidden rounded-[28px] bg-[#f8f6f1] px-4 py-8 text-[#171717] sm:px-6 sm:py-12 lg:mt-10 lg:px-8 lg:py-16">
+          <div className="mx-auto max-w-[1800px]">
+            <div className="grid gap-2 lg:grid-cols-[0.34fr_0.66fr]">
+              <h2 className="font-[family-name:var(--font-display)] text-[46px] uppercase leading-[0.9] tracking-[-0.04em] sm:text-[72px] lg:text-[102px]">
+                Ключевые принципы моей работы
+              </h2>
+              <h3 className="font-[family-name:var(--font-display)] text-[46px] uppercase leading-[0.9] tracking-[-0.04em] sm:text-[72px] lg:pt-[5.9rem] lg:text-[102px]">
+                для вашего комфорта и душевной атмосферы
+              </h3>
+            </div>
+
+            <div className="mt-4 flex justify-center lg:mt-2">
+              <span className="menu-script text-center text-[32px] text-[#fa4604] sm:text-[48px] lg:text-[64px]">~</span>
+            </div>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+              <article className="principle-photo-card rounded-[34px] bg-[#ebe8e0] p-0">
+                <div className="relative aspect-square overflow-hidden rounded-[34px]">
+                  <Image src="/tilda/principles-photo-1.png" alt="Свадебная церемония" fill className="object-cover" />
                 </div>
               </article>
 
-              <article className="section-card overflow-hidden">
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <Image
-                    src="/media/wedding-stage.jpg"
-                    alt="Тимур Громов на сцене с микрофоном"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-5 sm:p-6">
-                  <p className="section-label">Как я веду</p>
-                  <h3 className="text-2xl font-semibold tracking-[-0.04em] text-paper">Живой сценарий без перегруза</h3>
-                  <p className="mt-3 text-sm leading-7 text-white/66">
-                    Подстраиваюсь под гостей, оставляю пространство для естественных моментов и не душу вечер
-                    лишними формальностями.
-                  </p>
+              <article className="rounded-[34px] bg-[#fa4604] p-6 text-white sm:p-7">
+                <h3 className="font-[family-name:var(--font-display)] text-[28px] leading-[0.95] tracking-[-0.03em] sm:text-[36px]">
+                  {principlesCards[0].title}
+                </h3>
+                <p className="mt-24 text-[17px] leading-[1.35] text-white/95 sm:text-[20px]">{principlesCards[0].copy}</p>
+              </article>
+
+              <article className="principle-photo-card rounded-[34px] bg-[#ebe8e0] p-0">
+                <div className="relative aspect-square overflow-hidden rounded-[34px]">
+                  <Image src="/tilda/principles-photo-2.png" alt="Портрет Тимура Громова" fill className="object-cover" />
                 </div>
               </article>
+
+              <article className="rounded-[34px] border border-black/20 bg-transparent p-6 sm:p-7">
+                <h3 className="font-[family-name:var(--font-display)] text-[28px] leading-[0.95] tracking-[-0.03em] sm:text-[36px]">
+                  {principlesCards[1].title}
+                </h3>
+                <p className="mt-24 text-[17px] leading-[1.35] text-black/86 sm:text-[20px]">{principlesCards[1].copy}</p>
+              </article>
+
+              <article className="rounded-[34px] border border-black/20 bg-transparent p-6 sm:p-7">
+                <h3 className="font-[family-name:var(--font-display)] text-[28px] leading-[0.95] tracking-[-0.03em] sm:text-[36px]">
+                  {principlesCards[2].title}
+                </h3>
+                <p className="mt-24 text-[17px] leading-[1.35] text-black/86 sm:text-[20px]">{principlesCards[2].copy}</p>
+              </article>
+
+              <article className="principle-photo-card rounded-[34px] bg-[#ebe8e0] p-0">
+                <div className="relative aspect-square overflow-hidden rounded-[34px]">
+                  <Image src="/tilda/principles-photo-3.jpg" alt="Ведущий на свадьбе" fill className="object-cover" />
+                </div>
+              </article>
+
+              <article className="rounded-[34px] bg-[#171717] p-6 text-white sm:p-7">
+                <h3 className="font-[family-name:var(--font-display)] text-[28px] leading-[0.95] tracking-[-0.03em] sm:text-[36px]">
+                  {principlesCards[3].title}
+                </h3>
+                <p className="mt-24 text-[17px] leading-[1.35] text-white/94 sm:text-[20px]">{principlesCards[3].copy}</p>
+              </article>
+
+              <article className="rounded-[34px] bg-[#fa4604] p-6 text-white sm:p-7">
+                <h3 className="font-[family-name:var(--font-display)] text-[28px] leading-[0.95] tracking-[-0.03em] sm:text-[36px]">
+                  {principlesCards[4].title}
+                </h3>
+                <p className="mt-24 text-[17px] leading-[1.35] text-white/95 sm:text-[20px]">{principlesCards[4].copy}</p>
+              </article>
+            </div>
           </div>
-        </div>
+        </section>
 
         <section id="poleznosti" className="mt-8 space-y-6 lg:mt-10">
           <SectionHeading

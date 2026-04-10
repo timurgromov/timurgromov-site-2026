@@ -85,3 +85,8 @@ a {
   line-height: 0.94;
   text-transform: uppercase;
 }
+
+.menu-script {
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  line-height: 1;
+}
