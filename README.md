@@ -11,6 +11,10 @@
 - [Project Spec](docs/project-spec.md)
 - [Development Plan](docs/tasks.md)
 
+## Локальный запуск
+- `npm run dev`
+- открыть `http://127.0.0.1:3000`
+
 ## Статус
 - Базовый scaffold проекта уже создан.
 - Главная страница и ключевые секции уже перенесены ближе к реальному Tilda-экспорту.
