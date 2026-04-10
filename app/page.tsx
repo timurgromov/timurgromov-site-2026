@@ -3,7 +3,7 @@ import Image from "next/image";
 import { SectionHeading } from "@/components/section-heading";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { caseCards, heroFacts, processSteps, usefulCards } from "@/lib/site-content";
+import { caseCards, heroFacts, processSteps, reviewCards, usefulCards } from "@/lib/site-content";
 
 export default function HomePage() {
   return (
@@ -195,6 +195,35 @@ export default function HomePage() {
                 Tilda-сайте, без перегрузки страницы.
               </p>
             </article>
+          </div>
+        </section>
+
+        <section id="reviews" className="mt-8">
+          <div className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
+            <article className="section-card overflow-hidden">
+              <div className="relative aspect-[3/4] overflow-hidden">
+                <Image src="/media/portrait-bw.jpg" alt="Тимур Громов" fill className="object-cover" />
+              </div>
+              <div className="p-6">
+                <p className="section-label">Отзывы</p>
+                <h3 className="text-3xl font-semibold tracking-[-0.04em] text-paper">
+                  Живые впечатления гостей и пар
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-white/66">
+                  Этот блок нужен на одном лендинге, чтобы не уводить пользователя на отдельную страницу и не
+                  ломать сценарий просмотра.
+                </p>
+              </div>
+            </article>
+
+            <div className="grid gap-4">
+              {reviewCards.map((item) => (
+                <blockquote key={item.author} className="section-card p-6">
+                  <p className="text-lg leading-8 text-paper">“{item.quote}”</p>
+                  <footer className="mt-5 text-sm uppercase tracking-[0.26em] text-white/48">{item.author}</footer>
+                </blockquote>
+              ))}
+            </div>
           </div>
         </section>
 
