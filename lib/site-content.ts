@@ -1,34 +1,66 @@
 export const navItems = [
   { href: "#hero", label: "Главная" },
-  { href: "#services", label: "Секции" },
-  { href: "#video", label: "Видео" },
+  { href: "#about", label: "Обо мне" },
+  { href: "#how", label: "Как я веду" },
+  { href: "#useful", label: "Полезности" },
+  { href: "#cases", label: "Кейсы" },
+  { href: "#faq", label: "FAQ" },
   { href: "#contacts", label: "Контакты" },
 ] as const;
 
-export const highlights = [
+export const heroFacts = [
   {
-    title: "Сайт на своем коде",
-    text: "Переносим контент и визуальную структуру Tilda без зависимости от платформы.",
+    title: "Москва и область",
+    text: "Работаю по выездным и камерным форматам, без потери темпа и атмосферы.",
   },
   {
-    title: "Видео без Boomstream",
-    text: "Строим собственную схему воспроизведения с тестовым MP4 и проверкой через VPN.",
+    title: "Личный ведущий",
+    text: "Не агентство: подготовку и ведение держу сам, без передачи на поточную команду.",
   },
   {
-    title: "Готовность к лидам",
-    text: "Формы позже можно связать с существующей админкой и Telegram через backend.",
+    title: "Заявки под контролем",
+    text: "Позже форму можно подключить к существующей админке и Telegram через backend.",
   },
 ] as const;
 
 export const processSteps = [
-  "Локальный scaffold и первый экран.",
-  "Перенос ключевых секций и CTA.",
-  "Тестовое видео и проверка с VPN/без VPN.",
-  "Публикация на GitHub Pages.",
+  "Собрать первый экран и структуру в коде.",
+  "Перенести ключевые секции и карточки из Tilda.",
+  "Проверить фоновое видео и медиа по публичной ссылке.",
+  "После проверки включить GitHub Pages.",
+] as const;
+
+export const usefulCards = [
+  {
+    eyebrow: "Полезности",
+    title: "Вебинар с секретами идеальной свадьбы",
+    copy: "Это место для материалов, которые помогают парам готовиться к свадьбе без хаоса и лишних трат.",
+  },
+  {
+    eyebrow: "Видео",
+    title: "Подборка видео от меня «О чем должна знать каждая пара»",
+    copy: "Сюда подставим собственные видеофайлы вместо внешнего хостинга и тяжёлых плееров.",
+  },
+  {
+    eyebrow: "FAQ",
+    title: "Ответы на популярные вопросы",
+    copy: "Ниже можно разложить частые вопросы про формат, тайминг, сценарий и стоимость.",
+  },
+] as const;
+
+export const caseCards = [
+  {
+    title: "Селфи-формат без лишней постановки",
+    copy: "Живой момент с гостями и камерой — такой контент хорошо работает в блоке отзывов и кейсов.",
+  },
+  {
+    title: "Сцена, микрофон, ритм вечера",
+    copy: "Этот кадр подходит для блока «Как я веду» и показывает манеру подачи на мероприятии.",
+  },
 ] as const;
 
 export const contactLinks = [
   { label: "Telegram", href: "https://t.me/" },
-  { label: "Email", href: "mailto:hello@example.com" },
-  { label: "Instagram", href: "https://instagram.com/" },
+  { label: "Email", href: "mailto:Timurgromov.showman@gmail.com" },
+  { label: "Instagram", href: "https://www.instagram.com/timurgromov" },
 ] as const;
