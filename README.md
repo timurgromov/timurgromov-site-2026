@@ -10,6 +10,7 @@
 ## Документы
 - [Project Spec](docs/project-spec.md)
 - [Development Plan](docs/tasks.md)
+- [Section Map](docs/section-map.md)
 
 ## Локальный запуск
 - `npm run dev`
