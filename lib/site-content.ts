@@ -1,11 +1,9 @@
 export const navItems = [
-  { href: "#hero", label: "Главная" },
   { href: "#about", label: "Обо мне" },
-  { href: "#how", label: "Как я веду" },
-  { href: "#useful", label: "Полезности" },
+  { href: "#kak-ia-vedu", label: "Как я веду" },
+  { href: "#poleznosti", label: "Полезности" },
+  { href: "#price", label: "Цены" },
   { href: "#cases", label: "Кейсы" },
-  { href: "#reviews", label: "Отзывы" },
-  { href: "#faq", label: "FAQ" },
   { href: "#contacts", label: "Контакты" },
 ] as const;
 
@@ -25,10 +23,10 @@ export const heroFacts = [
 ] as const;
 
 export const processSteps = [
-  "Собрать первый экран и структуру в коде.",
-  "Перенести ключевые секции и карточки из Tilda.",
-  "Проверить фоновое видео и медиа по публичной ссылке.",
-  "После проверки включить GitHub Pages.",
+  "Знакомимся и фиксируем настроение вечера.",
+  "Собираем сценарий без лишней формальности.",
+  "Проводим свадьбу живо, тепло и без провисаний.",
+  "После события у гостей остается ощущение цельного вечера, а не набора конкурсов.",
 ] as const;
 
 export const usefulCards = [
