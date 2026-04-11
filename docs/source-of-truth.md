@@ -13,6 +13,8 @@ Rules:
 
 - Do not invent sections, texts, CTA labels, prices, reviews, or popup content.
 - Do not change the order of sections unless the export or live original site confirms it.
+- Restore the page strictly top-down: header, hero, about, `Как я веду`, `Полезности`, price, cases, contacts, then popups and media.
+- Do not jump ahead to lower sections or popups while upper sections are still incomplete or visibly off.
 - Use the Tilda export as the primary baseline for structure and content.
 - Use the live original site as an additional visual reference, not as a reason to redesign.
 - If the export and live site differ, prefer the export for structure and use screenshots to resolve visual details.
