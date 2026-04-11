@@ -2,18 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Coolvetica";
-  src: url("https://static.tildacdn.com/tild6636-6134-4531-a265-333565666232/AnyConvcom__coolveti.woff")
-    format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-
 :root {
   color-scheme: dark;
   --font-sans: "Manrope", "Segoe UI", "Helvetica Neue", "Liberation Sans", sans-serif;
-  --font-display: "Coolvetica", "Arial Narrow", "Helvetica Neue", sans-serif;
+  --font-display: "Manrope", "Segoe UI", "Helvetica Neue", "Liberation Sans", sans-serif;
 }
 
 html {
@@ -44,9 +36,7 @@ a {
 }
 
 .page-shell {
-  background-image:
-    radial-gradient(circle at top left, rgba(250, 70, 4, 0.14), transparent 28%),
-    linear-gradient(180deg, #1c1b1a 0%, #201f1d 100%);
+  background-color: #1c1b1a;
 }
 
 .section-card {
@@ -58,7 +48,7 @@ a {
 }
 
 .section-title {
-  @apply font-[family-name:var(--font-display)] text-4xl leading-tight text-paper sm:text-5xl;
+  @apply font-[family-name:var(--font-display)] text-4xl font-semibold leading-tight tracking-[-0.03em] text-paper sm:text-5xl;
 }
 
 .section-copy {
@@ -80,8 +70,8 @@ a {
 
 .hero-title {
   font-family: var(--font-display), sans-serif;
-  font-weight: 500;
-  letter-spacing: 0;
+  font-weight: 700;
+  letter-spacing: -0.04em;
   line-height: 0.94;
   text-transform: uppercase;
 }
