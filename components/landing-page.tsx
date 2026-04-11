@@ -6,43 +6,53 @@ import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { aboutIntro, aboutStats, heroFacts, principlesCards, whyWeddingItems } from "@/lib/site-content";
+import { aboutIntro, aboutStats, heroFacts, principlesCards, reviewCards, whyWeddingItems } from "@/lib/site-content";
 import { sitePath } from "@/lib/site-path";
 
 const usefulVideoCards = [
   {
-    id: "video-sovet-2",
+    id: "video-sovet-1",
     title: "Почему на моих свадьбах гости смеются, а не краснеют?",
+    videoUrl: "https://cdnv.boomstream.com/balancer/roHksxqq-SxJPiQup.mp4",
+  },
+  {
+    id: "video-sovet-2",
+    title: "Страшный момент на свадьбе? Как избежать неловких тостов",
     videoUrl: "https://cdnv.boomstream.com/balancer/aszKpzRZ-SxJPiQup.mp4",
   },
   {
     id: "video-sovet-3",
-    title: "Страшный момент на свадьбе? Как избежать неловких тостов",
+    title: "Как ведущий спасает свадьбу от хаоса: неочевидные моменты",
     videoUrl: "https://cdnv.boomstream.com/balancer/qzinNGjh-SxJPiQup.mp4",
   },
   {
-    id: "video-soveti-2",
+    id: "video-soveti-1",
     title: "План свадебного бюджета без него свадьба может стать провалом",
-    videoUrl: "https://cdnv.boomstream.com/balancer/rSg5jRyU-SxJPiQup.mp4",
+    videoUrl: "https://cdnv.boomstream.com/balancer/pCq9x3Jn-SxJPiQup.mp4",
   },
   {
-    id: "video-soveti-3",
+    id: "video-soveti-2",
     title: "Чего боятся гости на свадьбе и как этого избежать",
     videoUrl: "https://cdnv.boomstream.com/balancer/r9seULNi-SxJPiQup.mp4",
   },
   {
-    id: "video-soveti-4",
+    id: "video-soveti-3",
     title: "7 неожиданных задач, которые решает ведущий на свадьбе",
+    videoUrl: "https://cdnv.boomstream.com/balancer/Lww7hY2N-oqvc9Qft.mp4",
+  },
+  {
+    id: "video-soveti-4",
+    title: "Как выбрать ресторан для свадьбы, чтобы не пожалеть: главные советы",
     videoUrl: "https://cdnv.boomstream.com/balancer/RNUDagDY-SxJPiQup.mp4",
   },
   {
     id: "video-soveti-5",
-    title: "Как выбрать ресторан для свадьбы, чтобы не пожалеть: главные советы",
+    title: "Душевная свадьба на 20 гостей, своими силами или с ведущим",
     videoUrl: "https://cdnv.boomstream.com/balancer/ytQQEk4L-SxJPiQup.mp4",
   },
   {
     id: "video-soveti-6",
-    title: "Душевная свадьба на 20 гостей, своими силами или с ведущим",
+    title: "Особенности межнациональных свадеб: уникальный опыт для вашего праздника",
     videoUrl: "https://cdnv.boomstream.com/balancer/y8riDaTB-SxJPiQup.mp4",
   },
 ] as const;
@@ -75,74 +85,6 @@ const caseStories = [
     image: sitePath("/media/hero-banner.jpg"),
     summary:
       "Отзыв о том, как ведущий держит вечер элегантно и без пошлости.",
-  },
-] as const;
-
-const faqItems = [
-  {
-    question: "Чем ты отличаешься от других ведущих?",
-    answer:
-      "Я беру на себя полную ответственность за организацию торжества и его успешный ход. Моя работа — не только развлекать, но и координировать все процессы на свадьбе: от тайминга до взаимодействия с подрядчиками и гостями.",
-  },
-  {
-    question: "Как мы будем работать с тобой до свадьбы?",
-    answer:
-      "До дня свадьбы мы проведем несколько встреч. На первой я выслушаю ваши пожелания и особенности, затем предложу идеи, чтобы создать уникальный сценарий. Мы также согласуем тайминг и важные детали заранее.",
-  },
-  {
-    question: "Сколько времени нужно для подготовки?",
-    answer:
-      "Оптимальное время для подготовки — за 2–3 месяца до свадьбы. Это позволяет тщательно продумать детали, выбрать идеальный сценарий и согласовать все вопросы с подрядчиками без спешки.",
-  },
-  {
-    question: "Какие услуги ты предоставляешь помимо ведения праздника?",
-    answer:
-      "Помимо роли ведущего, я также обеспечиваю контроль тайминга, координацию действий с подрядчиками и музыкой, а также подачей блюд. При необходимости помогаю решать непредвиденные организационные вопросы.",
-  },
-  {
-    question: "Что, если в день свадьбы случится форс-мажор?",
-    answer:
-      "Я всегда готов к непредвиденным ситуациям. Благодаря опыту в большом количестве свадеб могу оперативно решить любые проблемы, чтобы вечер не развалился и остался цельным.",
-  },
-  {
-    question: "Какая музыка будет на свадьбе?",
-    answer:
-      "Музыка — это неотъемлемая часть атмосферы, и я всегда подхожу к этому вопросу с особым вниманием. Мы заранее согласуем формат вечера и музыку, чтобы ритм свадьбы был комфортным.",
-  },
-  {
-    question: "Как ты работаешь с командой подрядчиков?",
-    answer:
-      "Я беру на себя ответственность за слаженную работу всех подрядчиков: от фотографа до банкетного менеджера. Мы заранее согласуем детали, чтобы каждый знал свoю роль и не было хаоса в день события.",
-  },
-  {
-    question: "Как мы будем писать сценарий свадьбы?",
-    answer:
-      "Основные моменты тайминга вечера и сценария будут на 85% написаны и согласованы уже на первой встрече. Остальные детали докручиваются уже вместе с вами, без жёстких шаблонов.",
-  },
-  {
-    question: "Сколько встреч нам нужно до свадьбы?",
-    answer:
-      "Обычно мы встречаемся минимум дважды: первая встреча — для знакомства и обсуждения деталей, вторая — для финальной проработки сценария и тайминга. Если нужно, добавляем и дополнительные созвоны.",
-  },
-  {
-    question: "Нужен ли ведущий на маленькую свадьбу (20 человек)?",
-    answer:
-      "Да, нужен. Чем меньше свадьба, тем больше внимания получает каждый гость. Важно, чтобы атмосфера была уютной, но при этом торжество оставалось собранным и живым.",
-  },
-  {
-    question: "Какие дополнительные материалы ты предоставляешь для подготовки?",
-    answer:
-      "Я предлагаю полезные материалы: маршрутный лист, чек-листы для подготовки, калькулятор для расчёта бюджета и другие документы, которые помогают собрать свадьбу без лишнего стресса.",
-  },
-  {
-    question: "Ведете ли вы интернациональные свадьбы и в чем их особенность?",
-    answer:
-      "Да, у меня большой опыт в проведении интернациональных свадеб. Если торжество проходит в смешанном культурном составе, мы заранее подстраиваем ритм и сценарий под аудиторию.",
-  },
-  {
-    question: "Нужно ли подписывать договор с ведущим?",
-    answer:
-      "Да, договор помогает зафиксировать все детали — состав услуг, сроки и стоимость. Это нормально и удобно для обеих сторон.",
   },
 ] as const;
 
@@ -242,22 +184,60 @@ function CasePopup({
   );
 }
 
-function FaqPopup({ onClose }: { onClose: () => void }) {
+function ReviewsPopup({ onClose }: { onClose: () => void }) {
   return (
-    <PopupFrame title="Часто спрашивают" subtitle="я отвечаю" onClose={onClose} wide>
-      <div className="grid gap-4">
-        {faqItems.map((item, index) => (
-          <details key={item.question} className="group rounded-[18px] border border-black/10 bg-white p-4 shadow-sm" open={index === 0}>
-            <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-left font-[family-name:var(--font-display)] text-[22px] leading-[1.05] uppercase tracking-[-0.03em]">
-              <span>
-                <span className="mr-2 text-[#fa4604]">{String(index + 1).padStart(2, "0")}</span>
-                {item.question}
-              </span>
-              <span className="text-[#fa4604] transition group-open:rotate-45">+</span>
-            </summary>
-            <p className="mt-4 max-w-4xl text-[17px] leading-8 text-black/78">{item.answer}</p>
-          </details>
-        ))}
+    <PopupFrame title="8 секретов успешной свадьбы" subtitle="Отзывы о вебинаре" onClose={onClose} wide>
+      <div className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
+        <div className="space-y-6">
+          <p className="max-w-3xl text-[20px] leading-8 text-black/78 sm:text-[22px]">
+            О которых вам не расскажут организаторы. Этот popup в export собран как отдельный живой блок с цифрами,
+            отзывами и видео-материалом, а не как FAQ.
+          </p>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            <article className="rounded-[22px] bg-[#1f1f1d] p-5 text-white">
+              <p className="text-[12px] uppercase tracking-[0.3em] text-white/50">Вебинаров провел за 5 лет</p>
+              <p className="mt-4 font-[family-name:var(--font-display)] text-[56px] leading-none text-[#fa4604] sm:text-[68px]">
+                500+
+              </p>
+            </article>
+            <article className="rounded-[22px] bg-[#fff3ec] p-5 text-[#1c1b1a]">
+              <p className="text-[12px] uppercase tracking-[0.3em] text-black/40">Невест посмотрело вебинар</p>
+              <p className="mt-4 font-[family-name:var(--font-display)] text-[56px] leading-none text-[#fa4604] sm:text-[68px]">
+                3000+
+              </p>
+            </article>
+          </div>
+
+          <div className="grid gap-4">
+            {reviewCards.map((item) => (
+              <article key={item.author} className="rounded-[22px] border border-black/10 bg-white p-5 shadow-sm">
+                <p className="text-[18px] leading-8 text-black/82">&quot;{item.quote}&quot;</p>
+                <p className="mt-4 font-[family-name:var(--font-display)] text-[22px] uppercase tracking-[-0.03em] text-[#fa4604]">
+                  {item.author}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <div className="overflow-hidden rounded-[22px] bg-black">
+            <Image
+              src={sitePath("/media/hero-banner.jpg")}
+              alt="Вебинар Тимура Громова"
+              width={960}
+              height={760}
+              className="h-auto w-full object-cover"
+            />
+          </div>
+          <div className="rounded-[22px] border border-black/10 bg-white p-5">
+            <p className="text-[12px] uppercase tracking-[0.3em] text-black/40">Как это выглядит в export</p>
+            <p className="mt-3 text-[18px] leading-8 text-black/78">
+              Большой экран, цифры, отзывы и живая подача. Визуально это отдельный полноэкранный popup, а не FAQ-аккордеон.
+            </p>
+          </div>
+        </div>
       </div>
     </PopupFrame>
   );
@@ -654,10 +634,10 @@ export function LandingPage() {
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Link href="#popup:showreel" className="button-primary">
-                    Смотреть шоурил
+                    Смотреть вебинар
                   </Link>
                   <Link href="#popup:vebinar-reviews" className="button-secondary">
-                    Открыть отзывы и FAQ
+                    Отзывы о вебинаре
                   </Link>
                 </div>
               </div>
@@ -805,7 +785,7 @@ export function LandingPage() {
         <VideoPopup title="Ведущий Тимур Громов" videoUrl="https://cdnv.boomstream.com/balancer/UtWkPqj2-EuQeQgfF.mp4" onClose={closePopup} />
       ) : null}
 
-      {activePopup === "vebinar-reviews" ? <FaqPopup onClose={closePopup} /> : null}
+      {activePopup === "vebinar-reviews" ? <ReviewsPopup onClose={closePopup} /> : null}
 
       {usefulVideoCards.map((item) =>
         activePopup === item.id ? <VideoPopup key={item.id} title={item.title} videoUrl={item.videoUrl} onClose={closePopup} /> : null,
