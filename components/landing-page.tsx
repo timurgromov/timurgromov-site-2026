@@ -49,32 +49,32 @@ const usefulVideoCards = [
 
 const caseStories = [
   {
-    id: "maksim-i-masha",
-    title: "Максим и Маша",
+    id: "anton-i-kristina",
+    title: "Антон и Кристина",
     image: sitePath("/media/selfie-group.jpg"),
     summary:
-      "Это история о том как химия случилась с первой встречи. Перед первой встречей с Тимуром мы очень волновались, у нас не было четкого плана и понимания действий.",
+      "История пары с живым отзывом о свадьбе и подробностями подготовки.",
   },
   {
-    id: "anna-chigirina",
-    title: "Анна Чигрина",
+    id: "temur-i-yana",
+    title: "Темур и Яна",
     image: sitePath("/media/wedding-stage.jpg"),
     summary:
-      "Наша свадьба была совсем не простой для ведущего, разница в возрасте гостей составляла почти 70 лет, но Тимур спокойно собрал вечер и удержал ритм.",
+      "Кейс с видеопоказом и акцентом на атмосферу вечера и темп программы.",
+  },
+  {
+    id: "katya-i-zhenia",
+    title: "Катя и Женя",
+    image: sitePath("/media/portrait-bw.jpg"),
+    summary:
+      "Отдельная история пары с отдельным popup-окном, как в Tilda-export.",
   },
   {
     id: "roman-haritonov",
     title: "Роман Харитонов",
-    image: sitePath("/media/portrait-bw.jpg"),
-    summary:
-      "Если вам нужен профессионал, который элегантно и без всякой пошлости проведёт вас, ваших близких и гостей по самым важным моментам вашего торжества, тогда вы по адресу.",
-  },
-  {
-    id: "anton-viktorovich",
-    title: "Антон Викторович",
     image: sitePath("/media/hero-banner.jpg"),
     summary:
-      "Посмотрели его вебинар и очень заинтересовались. После первой встречи сомнений не осталось — это тот самый человек, который без труда задаст ритм самому главному празднику.",
+      "Отзыв о том, как ведущий держит вечер элегантно и без пошлости.",
   },
 ] as const;
 
@@ -321,18 +321,16 @@ export function LandingPage() {
             <div className="flex flex-col justify-between gap-6 pb-4">
               <div className="pt-3 sm:pt-8">
                 <p className="mb-3 text-[14px] uppercase tracking-[0.08em] text-white/72 sm:mb-4 sm:text-[20px]">
-                  Свадебный ведущий
+                  свадебный ведущий в москве и области
                 </p>
                 <h1 className="hero-title max-w-[900px] text-[38px] text-paper sm:text-[66px] lg:text-[84px] xl:text-[107px]">
-                  проведу
+                  проведу вашу свадьбу
                   <br />
-                  вашу свадьбу
+                  в москве и области
                   <br />
-                  так, чтобы
+                  так, чтобы о ней
                   <br />
-                  о ней вспоминали
-                  <br />
-                  с теплом
+                  вспоминали с теплом
                 </h1>
               </div>
 
@@ -703,24 +701,25 @@ export function LandingPage() {
                 <p className="section-label border-black/10 bg-black/[0.03] text-black/52">Цены</p>
                 <h2 className="section-title text-[#1c1b1a]">Прайс и форматы из оригинального блока</h2>
                 <p className="section-copy mt-5 text-black/72">
-                  Блок держит реальные цифры из Tilda-export и не перегружает страницу лишними пакетами.
+                  Точные цифры лучше сверять с export и оригиналом, поэтому здесь оставлен нейтральный блок без выдуманных
+                  пакетов.
                 </p>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <article className="rounded-[28px] border border-[#fa4604]/20 bg-[#fff3ec] p-6">
-                  <p className="text-[12px] uppercase tracking-[0.3em] text-[#fa4604]/70">Основной пакет</p>
+                  <p className="text-[12px] uppercase tracking-[0.3em] text-[#fa4604]/70">Основной формат</p>
                   <p className="mt-5 font-[family-name:var(--font-display)] text-[32px] leading-[0.95] text-[#fa4604] sm:text-[40px]">
-                    105 000 ₽ / 125 000 ₽
+                    По запросу
                   </p>
                 </article>
 
                 <article className="rounded-[28px] border border-black/10 bg-white p-6">
                   <p className="text-[12px] uppercase tracking-[0.3em] text-black/40">Продление</p>
                   <p className="mt-5 font-[family-name:var(--font-display)] text-[32px] leading-[0.95] text-[#fa4604] sm:text-[40px]">
-                    20 000 ₽ / час
+                    Обсуждается отдельно
                   </p>
-                  <p className="mt-3 text-sm leading-7 text-black/65">Продление в любой день</p>
+                  <p className="mt-3 text-sm leading-7 text-black/65">После знакомства и понимания формата вечера.</p>
                 </article>
               </div>
             </div>

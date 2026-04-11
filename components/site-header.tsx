@@ -110,7 +110,7 @@ export function SiteHeader() {
             </nav>
 
             <div className="space-y-5 text-[18px] leading-[1.25] sm:text-[22px] lg:space-y-7 lg:text-[24px]">
-              <p className="menu-script text-[28px] sm:text-[40px] lg:text-[54px]">Тут вы найдете много полезностей...</p>
+              <p className="menu-script text-[28px] sm:text-[40px] lg:text-[54px]">Тут вы найдете мнооого полезностей...</p>
               {menuUsefulLinks.map((item) => (
                 <Link key={item.href} href={item.href} onClick={closeMenu} className="block max-w-[18ch] transition hover:opacity-70">
                   {item.label}
