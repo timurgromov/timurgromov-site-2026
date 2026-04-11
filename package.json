@@ -4,6 +4,10 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "next dev -p 3000",
+    "dev:up": "sh -c 'if [ -f .dev.pid ] && kill -0 $(cat .dev.pid) 2>/dev/null; then echo \"dev server already running (pid $(cat .dev.pid))\"; exit 0; fi; nohup npm run dev > .dev.log 2>&1 & echo $! > .dev.pid; echo \"dev server started (pid $(cat .dev.pid))\"'",
+    "dev:down": "sh -c 'if [ ! -f .dev.pid ]; then echo \"no .dev.pid file\"; exit 0; fi; pid=$(cat .dev.pid); if kill -0 $pid 2>/dev/null; then kill $pid && echo \"dev server stopped (pid $pid)\"; else echo \"process $pid is not running\"; fi; rm -f .dev.pid'",
+    "dev:status": "sh -c 'if [ -f .dev.pid ] && kill -0 $(cat .dev.pid) 2>/dev/null; then echo \"running (pid $(cat .dev.pid))\"; else echo \"stopped\"; fi'",
+    "dev:logs": "sh -c 'if [ -f .dev.log ]; then tail -n 80 .dev.log; else echo \"no .dev.log yet\"; fi'",
     "build": "next build",
     "start": "next start",
     "lint": "eslint app components lib --ext .ts,.tsx"
