@@ -13,8 +13,7 @@ Rules:
 
 - Do not invent sections, texts, CTA labels, prices, reviews, or popup content.
 - Do not change the order of sections unless the export or live original site confirms it.
-- Restore the page strictly top-down: header, hero, about, `Как я веду`, `Полезности`, price, cases, contacts, then popups and media.
-- Do not jump ahead to lower sections or popups while upper sections are still incomplete or visibly off.
+- Use [docs/rebuild-workflow.md](docs/rebuild-workflow.md) as the single operational plan.
 - Use the Tilda export as the primary baseline for structure and content.
 - Use the live original site as an additional visual reference, not as a reason to redesign.
 - If the export and live site differ, prefer the export for structure and use screenshots to resolve visual details.
@@ -22,7 +21,7 @@ Rules:
 - For this repository, the published GitHub Pages site is the default verification target after deploy.
 - Do not start a local dev server by habit when the same issue can be checked on the live GitHub Pages page.
 - Use local `npm run dev` only when a problem cannot be reproduced or inspected on the published site, or when you need a fast isolated debugging loop before the next deploy.
-- Default workflow: `npm run lint` -> `npm run build` -> commit/push -> deploy to `gh-pages` -> verify the published URL.
+- Default workflow is documented in [docs/rebuild-workflow.md](docs/rebuild-workflow.md).
 - A successful local build is not enough to close a task if the change affects page rendering, routing, assets, or popups.
 
 Operational note:

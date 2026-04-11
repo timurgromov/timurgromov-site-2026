@@ -9,7 +9,7 @@
 
 ## Документы
 - [Project Spec](docs/project-spec.md)
-- [Development Plan](docs/tasks.md)
+- [Rebuild Workflow](docs/rebuild-workflow.md)
 - [Section Map](docs/section-map.md)
 - [Source of Truth](docs/source-of-truth.md)
 
@@ -22,8 +22,7 @@
 - Локальный `dev` используем только как быстрый debugging loop, когда проблема не видна на опубликованной странице или когда надо проверить правку до деплоя.
 - Базовый порядок: `npm run lint` -> `npm run build` -> commit/push -> deploy to `gh-pages` -> проверить live URL.
 - Для этого проекта GitHub Pages важнее локальной копии как финальная точка проверки после публикации.
-- Восстановление лендинга всегда идет сверху вниз: `header -> hero -> about -> Как я веду -> Полезности -> price -> cases -> contacts -> popups -> media`.
-- Не прыгать к нижним секциям, пока верхние не приведены к состоянию, близкому к оригиналу.
+- Подробный порядок восстановления и правила ведения работ: [docs/rebuild-workflow.md](docs/rebuild-workflow.md)
 
 ## Статус
 - Базовый scaffold проекта уже создан.
