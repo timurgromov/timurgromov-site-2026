@@ -304,9 +304,9 @@ export function LandingPage() {
                   свадебный ведущий в москве и области
                 </p>
                 <h1 className="hero-title max-w-[900px] text-[38px] text-paper sm:text-[66px] lg:text-[84px] xl:text-[107px]">
-                  проведу вашу свадьбу
+                  Свадебный ведущий в Москве и области
                   <br />
-                  в москве и области
+                  - проведу вашу свадьбу
                   <br />
                   так, чтобы о ней
                   <br />
