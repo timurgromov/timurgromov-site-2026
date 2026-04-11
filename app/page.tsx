@@ -3,7 +3,17 @@ import Image from "next/image";
 import { SectionHeading } from "@/components/section-heading";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { caseCards, heroFacts, principlesCards, processSteps, reviewCards, usefulCards } from "@/lib/site-content";
+import {
+  aboutIntro,
+  aboutStats,
+  caseCards,
+  heroFacts,
+  principlesCards,
+  processSteps,
+  reviewCards,
+  usefulCards,
+  whyWeddingItems,
+} from "@/lib/site-content";
 
 export default function HomePage() {
   return (
@@ -188,6 +198,160 @@ export default function HomePage() {
                 </h3>
                 <p className="mt-24 text-[17px] leading-[1.35] text-white/95 sm:text-[20px]">{principlesCards[4].copy}</p>
               </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-8 overflow-hidden rounded-[28px] bg-[#fffefa] px-4 py-8 text-[#1c1b1a] sm:px-6 sm:py-12 lg:mt-10 lg:px-8 lg:py-16">
+          <div className="mx-auto max-w-[1800px]">
+            <div className="grid gap-4 lg:grid-cols-[1fr_1fr]">
+              <h2 className="font-[family-name:var(--font-display)] text-[46px] uppercase leading-[0.9] tracking-[-0.04em] sm:text-[74px] lg:text-[102px]">
+                Тимур Громов
+                <br />
+                - ведущий, который
+              </h2>
+              <h3 className="font-[family-name:var(--font-display)] text-[46px] uppercase leading-[0.9] tracking-[-0.04em] sm:text-[74px] lg:text-[102px]">
+                ваши мечты
+              </h3>
+            </div>
+
+            <div className="mt-4 grid gap-6 lg:grid-cols-[0.26fr_0.48fr_0.26fr] lg:items-start">
+              <div className="relative mx-auto w-full max-w-[360px]">
+                <Image
+                  src="/tilda/about-photo-main.jpg"
+                  alt="Гости на свадьбе"
+                  width={360}
+                  height={360}
+                  className="h-auto w-full rounded-[120px] object-cover"
+                />
+                <Image
+                  src="/tilda/about-highlight.svg"
+                  alt=""
+                  width={52}
+                  height={56}
+                  className="pointer-events-none absolute left-2 top-0 h-auto w-[44px] sm:w-[52px]"
+                />
+              </div>
+
+              <div className="space-y-6">
+                <Image src="/tilda/about-smile.svg" alt="" width={88} height={84} className="h-auto w-[66px] sm:w-[88px]" />
+                <div className="space-y-4 text-[20px] leading-[1.3] text-black/88 sm:text-[30px]">
+                  {aboutIntro.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                  <p className="menu-script text-[34px] leading-none text-[#fa4604] sm:text-[46px]">Про увлечения и личное</p>
+                </div>
+
+                <div className="grid gap-6 pt-2 sm:grid-cols-3 sm:gap-8">
+                  {aboutStats.map((item) => (
+                    <article key={item.value + item.label}>
+                      <p className="font-[family-name:var(--font-display)] text-[64px] leading-[0.9] tracking-[-0.03em] sm:text-[84px]">
+                        {item.value}
+                      </p>
+                      <p className="mt-1 max-w-[20ch] text-[20px] leading-[1.15] text-black/82 sm:text-[36px]">{item.label}</p>
+                    </article>
+                  ))}
+                </div>
+              </div>
+
+              <div className="relative mx-auto w-full max-w-[360px]">
+                <Image
+                  src="/tilda/about-photo-side.jpg"
+                  alt="Тимур Громов"
+                  width={360}
+                  height={540}
+                  className="h-auto w-full rounded-[20px] object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="kak-ia-vedu" className="mt-8 overflow-hidden rounded-[28px] bg-[#1f1f1d] px-4 py-8 text-[#fffefa] sm:px-6 sm:py-12 lg:mt-10 lg:px-8 lg:py-16">
+          <div className="mx-auto max-w-[1800px]">
+            <div className="grid gap-8 lg:grid-cols-[0.48fr_0.52fr] lg:items-start">
+              <article className="relative overflow-hidden rounded-[24px] bg-[#fffefa] p-4 text-[#1c1b1a] sm:p-6">
+                <Image src="/tilda/why-bg-1.png" alt="" width={160} height={160} className="pointer-events-none absolute -left-8 top-0 h-auto w-24 opacity-80 sm:w-32" />
+                <Image src="/tilda/why-bg-2.png" alt="" width={160} height={160} className="pointer-events-none absolute right-0 top-0 h-auto w-24 opacity-80 sm:w-32" />
+                <Image src="/tilda/why-bg-3.png" alt="" width={160} height={160} className="pointer-events-none absolute -left-8 bottom-2 h-auto w-24 opacity-80 sm:w-32" />
+                <Image src="/tilda/why-bg-4.png" alt="" width={160} height={160} className="pointer-events-none absolute right-0 bottom-0 h-auto w-24 opacity-80 sm:w-32" />
+
+                <p className="menu-script text-[34px] text-[#fa4604] sm:text-[54px]">Вот как я веду свадьбы:</p>
+
+                <div className="mt-4 space-y-3 sm:space-y-4">
+                  {whyWeddingItems.map((item, index) => (
+                    <button
+                      key={item.index}
+                      type="button"
+                      className={[
+                        "group relative w-full rounded-[16px] border p-4 text-left transition sm:p-5",
+                        index === 0
+                          ? "border-[#fa4604] bg-[#fa4604] text-white"
+                          : "border-[#fa4604]/70 bg-[#fffefa] text-[#1c1b1a] hover:bg-[#fff3ec]",
+                      ].join(" ")}
+                    >
+                      <div className="grid grid-cols-[auto_1fr_auto] items-start gap-3">
+                        <span className="font-[family-name:var(--font-display)] text-[36px] leading-none text-[#fa4604] sm:text-[48px]">
+                          {item.index}
+                        </span>
+                        <p
+                          className={[
+                            "whitespace-pre-line text-[16px] leading-[1.2] sm:text-[24px]",
+                            index === 0 ? "text-white" : "text-[#1c1b1a]",
+                          ].join(" ")}
+                        >
+                          {item.title}
+                        </p>
+                        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/90">
+                          <Image src="/tilda/play.svg" alt="" width={18} height={18} className="h-[18px] w-[18px]" />
+                        </span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+
+                <div className="mt-5 flex items-center gap-3 text-[14px] text-black/45 sm:text-[17px]">
+                  <Image src="/tilda/why-board-arrow.png" alt="" width={72} height={72} className="h-auto w-14 sm:w-[72px]" />
+                  <span>Кликай на карточку, чтобы посмотреть видео</span>
+                </div>
+              </article>
+
+              <div className="relative overflow-hidden rounded-[24px] px-2 py-4 sm:px-4">
+                <Image src="/tilda/why-script.svg" alt="" width={250} height={46} className="pointer-events-none absolute right-0 top-0 h-auto w-[150px] sm:w-[250px]" />
+                <h2 className="font-[family-name:var(--font-display)] text-[48px] uppercase leading-[0.9] tracking-[-0.04em] text-[#fffefa] sm:text-[76px] lg:text-[105px]">
+                  Почему ваша свадьба
+                  <br />
+                  пройдет безупречно
+                </h2>
+                <p className="menu-script mt-4 text-[38px] leading-none text-[#fa4604] sm:text-[64px]">
+                  О чем должна знать
+                  <br />
+                  каждая пара?
+                </p>
+
+                <div className="mt-6 flex flex-wrap items-end justify-between gap-6">
+                  <Image
+                    src="/tilda/why-photo-polaroid.png"
+                    alt="Ведущий на свадьбе"
+                    width={420}
+                    height={500}
+                    className="h-auto w-[260px] max-w-full sm:w-[420px]"
+                  />
+
+                  <div className="space-y-4">
+                    <Link href="#contacts" className="button-primary h-12 px-8 text-[16px] sm:h-14 sm:px-10 sm:text-[24px]">
+                      обсудить мою свадьбу
+                    </Link>
+                    <Image
+                      src="/tilda/why-side-photo.jpg"
+                      alt="Свадебная церемония"
+                      width={460}
+                      height={332}
+                      className="h-auto w-[260px] max-w-full rounded-[40px] object-cover sm:w-[420px]"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
