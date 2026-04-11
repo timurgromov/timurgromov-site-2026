@@ -12,8 +12,8 @@ export const navItems = [
 export const menuUsefulLinks = [
   { href: "#about", label: "Полезности от меня" },
   { href: "#poleznosti", label: "Подборка видео от меня «О чем должна знать каждая пара»" },
-  { href: "#vebinar", label: "Вебинар с секретами идеальной свадьбы" },
-  { href: "#qa", label: "Ответы на популярные вопросы" },
+  { href: "#popup:showreel", label: "Вебинар с секретами идеальной свадьбы" },
+  { href: "#popup:vebinar-reviews", label: "Отзывы о вебинаре" },
 ] as const;
 
 export const socialLinks = [
@@ -154,7 +154,7 @@ export const faqItems = [
 ] as const;
 
 export const contactLinks = [
-  { label: "Telegram", href: "https://t.me/" },
+  { label: "Telegram", href: "https://t.me/timurgromovv" },
   { label: "Email", href: "mailto:Timurgromov.showman@gmail.com" },
   { label: "Instagram", href: "https://www.instagram.com/timurgromov" },
 ] as const;

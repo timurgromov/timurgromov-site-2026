@@ -6,10 +6,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:px-8">
         <div>
           <p className="text-xs uppercase tracking-[0.35em] text-white/40">Тимур Громов</p>
-          <p className="mt-3 max-w-2xl text-sm leading-7 text-white/62">
-            Пересборка сайта на собственном стеке с сохранением визуального характера, контента и готовности
-            к дальнейшему подключению форм и видео.
-          </p>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-white/62">Свадебный ведущий в Москве и области.</p>
         </div>
 
         <div className="flex flex-wrap gap-3 lg:justify-end">
