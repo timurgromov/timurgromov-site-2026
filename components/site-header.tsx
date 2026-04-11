@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { menuUsefulLinks, navItems, socialLinks } from "@/lib/site-content";
+import { sitePath } from "@/lib/site-path";
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,10 +42,10 @@ export function SiteHeader() {
         >
           <Link href="#hero" className="flex items-center gap-2.5 sm:gap-3">
             <div className="relative h-7 w-7 overflow-hidden rounded-[4px] sm:h-[34px] sm:w-[34px]">
-              <Image src="/tilda/logo-avatar.jpg" alt="" fill className="object-cover" />
+              <Image src={sitePath("/tilda/logo-avatar.jpg")} alt="" fill className="object-cover" />
             </div>
             <Image
-              src="/tilda/logo.svg"
+              src={sitePath("/tilda/logo.svg")}
               alt="Тимур Громов"
               width={147}
               height={34}
@@ -81,9 +82,9 @@ export function SiteHeader() {
           <div className="flex items-center justify-between">
             <Link href="#hero" className="flex items-center gap-3" onClick={closeMenu}>
               <div className="relative h-[34px] w-[34px] overflow-hidden rounded-[4px]">
-                <Image src="/tilda/logo-avatar.jpg" alt="" fill className="object-cover" />
+                <Image src={sitePath("/tilda/logo-avatar.jpg")} alt="" fill className="object-cover" />
               </div>
-              <Image src="/tilda/logo.svg" alt="Тимур Громов" width={147} height={34} className="h-auto w-[147px]" />
+              <Image src={sitePath("/tilda/logo.svg")} alt="Тимур Громов" width={147} height={34} className="h-auto w-[147px]" />
             </Link>
 
             <button type="button" onClick={closeMenu} className="flex h-11 w-11 items-center justify-center" aria-label="Закрыть меню">
@@ -137,7 +138,7 @@ export function SiteHeader() {
                       aria-label={item.label}
                       className="flex h-12 w-12 items-center justify-center rounded-[12px] bg-white text-[#fa4604] transition hover:opacity-85"
                     >
-                      <Image src={item.icon} alt="" width={24} height={24} className="h-6 w-6" />
+                      <Image src={sitePath(item.icon)} alt="" width={24} height={24} className="h-6 w-6" />
                     </a>
                   ))}
                 </div>

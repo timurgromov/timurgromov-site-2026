@@ -1,3 +1,5 @@
+import { sitePath } from "@/lib/site-path";
+
 export const navItems = [
   { href: "#about", label: "Обо мне" },
   { href: "#kak-ia-vedu", label: "Как я веду" },
@@ -15,9 +17,9 @@ export const menuUsefulLinks = [
 ] as const;
 
 export const socialLinks = [
-  { href: "https://www.instagram.com/timurgromov", label: "Instagram", icon: "/tilda/instagram.svg" },
-  { href: "https://t.me/timurgromovv", label: "Telegram", icon: "/tilda/telegram.svg" },
-  { href: "https://vk.com/club30375712", label: "VK", icon: "/tilda/vk.svg" },
+  { href: "https://www.instagram.com/timurgromov", label: "Instagram", icon: sitePath("/tilda/instagram.svg") },
+  { href: "https://t.me/timurgromovv", label: "Telegram", icon: sitePath("/tilda/telegram.svg") },
+  { href: "https://vk.com/club30375712", label: "VK", icon: sitePath("/tilda/vk.svg") },
 ] as const;
 
 export const principlesCards = [
