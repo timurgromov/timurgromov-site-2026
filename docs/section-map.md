@@ -1,6 +1,7 @@
 # Section Map: timurgromov.ru from Tilda export
 
 ## Source of truth
+- Additional rule file: `docs/source-of-truth.md`
 - Main page export: `page62008353.html`
 - Main body export: `files/page62008353body.html`
 
